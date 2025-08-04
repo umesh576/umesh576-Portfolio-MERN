@@ -7,8 +7,8 @@ const BackgroundPage = () => {
       <div className="w-full flex justify-center">
         {/* <Image src={"/bg.png"} width={800} height={800} alt={"admin"} /> */}
         <div>
-          <div className="border-1 rounded-full p-5">
-            <div className="p-0 border-1 rounded-full">
+          <div className="border-1 border-violet-300 rounded-full p-5">
+            <div className="p-0 border-1 border-violet-300 rounded-full">
               <Image
                 className="rounded-full object-cover"
                 src={"/ownbg.jpeg"}

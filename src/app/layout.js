@@ -1,6 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../component/Navbar";
+// import Footer from "../component/Footer";
+import Footer from "@/component/Footer";
 
 export default function RootLayout({ children }) {
   return (
@@ -8,6 +10,7 @@ export default function RootLayout({ children }) {
       <body className={`h-80 w-full bg-cover object-fill text-white `}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

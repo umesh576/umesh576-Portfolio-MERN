@@ -1,8 +1,11 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import { BsChatTextFill } from "react-icons/bs";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
+  const router = useRouter();
   return (
     <div className="w-full sticky top-0 bg-white/10 backdrop-blur-md p-3">
       <div className="flex justify-between text-white cursor-pointer">
@@ -14,7 +17,7 @@ const Navbar = () => {
             <ul className=" flex gap-15 p-3">
               <li>
                 <a
-                  href="#"
+                  href="/"
                   className="px-3 py-1 rounded-2xl hover:text-white hover:bg-black hover:underline font-bold"
                 >
                   Home
@@ -22,7 +25,7 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/my-project"
                   className="px-3 py-1 rounded-2xl hover:text-white hover:bg-black hover:underline font-bold"
                 >
                   Project
@@ -31,7 +34,7 @@ const Navbar = () => {
 
               <li>
                 <a
-                  href="#"
+                  href="/about-me"
                   className="px-3 py-1 rounded-2xl hover:text-white hover:bg-black hover:underline font-bold"
                 >
                   About
@@ -40,7 +43,12 @@ const Navbar = () => {
             </ul>
           </nav>
           <div className="flex justify-center items-center ">
-            <button className=" bg-white text-2xl rounded-full text-center text-black cursor-pointer   hover:bg-gray-300 ">
+            <button
+              className=" bg-white text-2xl rounded-full text-center text-black cursor-pointer   hover:bg-gray-300 "
+              onClick={() => {
+                router.push("/contact-me");
+              }}
+            >
               <div className="p-2 bg-black rounded-full ">
                 <BsChatTextFill className="text-white cursor-pointer hover:p-1" />
               </div>
