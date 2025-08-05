@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const BackgroundPage = () => {
   return (
-    <div className="w-full h-screen relative flex items-center">
+    <div className="w-full  relative flex ">
       <div className="w-full flex justify-center">
         {/* <Image src={"/bg.png"} width={800} height={800} alt={"admin"} /> */}
         <div>
