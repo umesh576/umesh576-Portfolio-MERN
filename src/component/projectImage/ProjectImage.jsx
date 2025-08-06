@@ -35,7 +35,6 @@ function LazyLoad() {
             {/* Add some padding between slides */}
             <div className="relative w-full h-96">
               {" "}
-              {/* Set a fixed height for all slides */}
               <Image
                 src={image.src}
                 alt={image.alt}
