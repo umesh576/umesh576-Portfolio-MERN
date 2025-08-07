@@ -4,7 +4,7 @@ import Image from "next/image";
 const Description = () => {
   return (
     <div className="w-full p-5">
-      <div className="flex p-4 justify-center items-center">
+      <div className="flex flex-wrap flex-row  p-4 justify-center items-center">
         <div className="w-1/2">
           <div>
             <h1 className="font-bold text-3xl underline p-1 text-center">

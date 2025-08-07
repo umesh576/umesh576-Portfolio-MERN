@@ -12,7 +12,7 @@ const Footer = () => {
     });
   };
   return (
-    <div className="text-white p-3 bg-black   z-10 bottom-0  px-5">
+    <div className="text-white p-3 bg-black relative bottom-0   z-10   px-5">
       <div className="flex justify-between">
         <div className="flex items-center gap-1 hover:text-gray-400">
           <FaRegCopyright />

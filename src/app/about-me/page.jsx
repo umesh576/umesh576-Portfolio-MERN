@@ -1,17 +1,20 @@
 "use client";
-import AceddemicCard from "@/component/Acedemic/AceddemicCard";
 import Description from "@/component/Description";
 import ProjectCard from "@/component/project-details/ProjectCard";
+import SeeDetailsAcedemic from "@/component/SeeDetailsAcedemic";
 import React from "react";
 
 const AboutMe = () => {
   const project = [1, 2];
   return (
-    <div className="text-black w-full">
+    <div className="text-black w-full relative top-20 ">
       <Description />
 
       <div>
-        <AceddemicCard />
+        <div className="text-center px-1 py-3 text-3xl font-bold">
+          <h1>Education and skill</h1>
+        </div>
+        <SeeDetailsAcedemic />
       </div>
       <div className="w-full">
         <div className="w-full text-4xl font-extrabold text-center py-10">
@@ -25,7 +28,7 @@ const AboutMe = () => {
             })}
           </div>
         </div>
-        <div className="flex p-5 justify-center ">
+        <div className="flex p-5 justify-center relative top-0 ">
           <button className="px-5 py-3 text-lg cursor-pointer rounded-lg  bg-black text-white hover:bg-white hover:text-black hover:border hover:font-bold">
             See more Project
           </button>
