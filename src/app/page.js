@@ -1,4 +1,5 @@
 "use client";
+import "./globals.css";
 import HeroPage from "@/component/HeroPage";
 
 import BackgroundPage from "./../component/BackgroundPage";

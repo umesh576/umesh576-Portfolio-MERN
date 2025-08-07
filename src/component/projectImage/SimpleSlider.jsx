@@ -1,11 +1,10 @@
 import React from "react";
 import Slider from "react-slick";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Image from "next/image";
+import "../../styles/Slider.css";
 
-const LazyLoad = ({ images }) => {
+const SimpleSlider = () => {
   const settings = {
     dots: true,
     lazyLoad: true,
@@ -15,6 +14,13 @@ const LazyLoad = ({ images }) => {
     slidesToScroll: 1,
     initialSlide: 2,
   };
+
+  const images = [
+    { src: "/project/1.png", alt: "Project 1" },
+    { src: "/project/2.png", alt: "Project 2" },
+    { src: "/project/3.png", alt: "Project 3" },
+    { src: "/project/4.png", alt: "Project 4" },
+  ];
 
   return (
     <div className="w-full max-w-6xl mx-auto px-4">
@@ -36,5 +42,4 @@ const LazyLoad = ({ images }) => {
     </div>
   );
 };
-
-export default LazyLoad;
+export default SimpleSlider;

@@ -1,0 +1,19 @@
+/* Slider.css */
+.slick-slider {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
+.slick-dots li button:before {
+  font-size: 6px;
+  color: black;
+}
+
+.slick-dots li.slick-active button:before {
+  color: black;
+}
