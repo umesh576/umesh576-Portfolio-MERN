@@ -33,6 +33,7 @@ function LazyLoad() {
           <div key={index} className="px-2">
             {" "}
             {/* Add some padding between slides */}
+            <p>umesh</p>
             <div className="relative w-full h-96">
               {" "}git
               <Image
