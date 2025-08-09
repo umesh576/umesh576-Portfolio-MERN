@@ -2,6 +2,7 @@
 import Description from "@/component/Description";
 import ProjectCard from "@/component/project-details/ProjectCard";
 import SeeDetailsAcedemic from "@/component/SeeDetailsAcedemic";
+import SkillDetails from "@/component/skill/SkillDetails";
 import React from "react";
 
 const AboutMe = () => {
@@ -9,6 +10,13 @@ const AboutMe = () => {
   return (
     <div className="text-black w-full relative top-20 ">
       <Description />
+      <hr />
+      <div>
+        <div className="p-4">
+          <h1 className="text-6xl font-extrabold text-center">My Skill</h1>
+        </div>
+        <SkillDetails />
+      </div>
 
       <div>
         <div className="text-center px-1 py-3 text-3xl font-bold">

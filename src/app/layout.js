@@ -8,8 +8,10 @@ import Footer from "@/component/Footer";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`h-80 w-full bg-cover object-fill text-black `}>
-        <Navbar />
+      <body>
+        <div>
+          <Navbar />
+        </div>
         <div>{children}</div>
         <div>
           <Footer />

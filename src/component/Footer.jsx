@@ -12,8 +12,8 @@ const Footer = () => {
     });
   };
   return (
-    <div className="text-white p-3 bg-black relative bottom-0   z-10   px-5">
-      <div className="flex justify-between">
+    <div className="text-white  bg-black    z-10   ">
+      <div className="flex justify-between py-3 px-5">
         <div className="flex items-center gap-1 hover:text-gray-400">
           <FaRegCopyright />
 
@@ -37,14 +37,6 @@ const Footer = () => {
               uj19343@gmail.com
             </p>
           </div>
-          {/* <p
-            onClick={() => {
-              copyToclipBoard("uj19343@gmail.com");
-            }}
-            className="hover:"
-          >
-            uj19343@gmail.com
-          </p> */}
         </div>
         <div className="flex items-center gap-1 hover:text-gray-400">
           <IoMdContact />
