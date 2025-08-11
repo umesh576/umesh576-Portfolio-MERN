@@ -11,8 +11,8 @@ const AceddemicCard = () => {
           <div>
             <li>SEE</li>
             <p className="font-normal">
-              I completed my see level from Khaptad vidya niketan located in
-              kailai chaukidada,Nepal. Iscoredgit
+              I completed my see level from Khaptad vidya niketan with securing
+              3.25gpa which is located in kailai chaukidada,Nepal.
             </p>
             <br />
             <li>+2 level</li>
