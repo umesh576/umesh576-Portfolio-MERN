@@ -10,9 +10,9 @@ const SeeDetailsAcedemic = () => {
   return (
     <div>
       <div>
-        <div className="flex gap-20 py-10 justify-center ">
+        <div className="flex gap-5 py-2 px-5  font-normal ">
           <button
-            className="bg-gray-200  px-5 py-3 border-gray-300 border-t-2 border-x-2 cursor-pointer rounded-t-lg hover:border-gray-400"
+            className="bg-gray-200 p-1 cursor-pointer rounded-t-lg hover:border-gray-700"
             onClick={() => {
               setacedemic(true);
               setcertification(false);
@@ -23,7 +23,7 @@ const SeeDetailsAcedemic = () => {
             Acedemic
           </button>
           <button
-            className="bg-gray-200  px-5 py-3 border-gray-300 border-t-2 border-x-2 cursor-pointer rounded-t-lg hover:border-gray-400"
+            className="bg-gray-200    cursor-pointer rounded-t-lg hover:border-gray-400"
             onClick={() => {
               setcertification(true);
               setacedemic(false);
@@ -34,7 +34,7 @@ const SeeDetailsAcedemic = () => {
             Certification
           </button>
           <button
-            className="bg-gray-200  px-5 py-3 border-gray-300 border-t-2 border-x-2 cursor-pointer rounded-t-lg hover:border-gray-400"
+            className="bg-gray-200    cursor-pointer rounded-t-lg hover:border-gray-400"
             onClick={() => {
               setachivement(true);
               setcertification(false);
@@ -45,7 +45,7 @@ const SeeDetailsAcedemic = () => {
             Acheivements
           </button>
           <button
-            className="bg-gray-200  px-5 py-3 border-gray-300 border-t-2 border-x-2 cursor-pointer rounded-t-lg hover:border-gray-400"
+            className="bg-gray-200    cursor-pointer rounded-t-lg hover:border-gray-400"
             onClick={() => {
               setpartipation(true);
               setcertification(false);
@@ -56,7 +56,8 @@ const SeeDetailsAcedemic = () => {
             Partipation
           </button>
         </div>
-        <div className="px-20 py-10">
+        <div className="px-5">
+          <hr />
           {acedemic && (
             <div>
               <AceddemicCard />

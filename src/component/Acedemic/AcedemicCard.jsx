@@ -7,19 +7,17 @@ const AceddemicCard = () => {
   return (
     <div>
       <div>
-        <div className="P-10">
+        <div>
           <div>
-            <li>
-              <button>SEE</button>
-            </li>
+            <li>SEE</li>
+            <p className="font-normal">
+              I completed my see level from Khaptad vidya niketan located in
+              kailai chaukidada,Nepal. Iscoredgit
+            </p>
             <br />
-            <li>
-              <button>+2 level</button>
-            </li>
+            <li>+2 level</li>
             <br />
-            <li>
-              <button>Bachelor</button>
-            </li>
+            <li>Bachelor</li>
             <br />
           </div>
           <div>{isSee && <div>see level education</div>}</div>
