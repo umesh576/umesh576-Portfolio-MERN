@@ -1,8 +1,10 @@
 "use client";
 import SeeDetailsAcedemic from "@/component/SeeDetailsAcedemic";
 import SkillDetails from "@/component/skill/SkillDetails";
+// import SkillCard from "@/component/skill/SkillCard";
 import React from "react";
 import Image from "next/image";
+import LanguageComponmnet from "@/component/languageComp/LanguageComponmnet";
 
 const AboutMe = () => {
   return (
@@ -30,11 +32,15 @@ const AboutMe = () => {
           </div>
         </div>
       </div>
-      <div>
+      <div className="p-1">
         <div className="p-4">
           <h1 className="text-5xl font-extrabold text-center">My Skill</h1>
         </div>
-        <SkillDetails />
+        <div className="p-10">
+          <LanguageComponmnet />
+          {/* <SkillDetails /> */}
+          {/* <SkillCard /> */}
+        </div>
       </div>
     </div>
   );

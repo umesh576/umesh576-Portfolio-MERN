@@ -3,7 +3,7 @@ import Image from "next/image";
 import ProjectName from "../project/ProjectName";
 
 const SkillCard = ({ skill }) => {
-  console.log("skill", skill);
+  // console.log("skill", skill);
   return (
     <div>
       <div className="border  p-5">

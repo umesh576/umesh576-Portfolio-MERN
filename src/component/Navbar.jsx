@@ -40,6 +40,14 @@ const Navbar = () => {
                   About
                 </a>
               </li>
+              <li>
+                <a
+                  href="/about-me"
+                  className="px-3 py-1 rounded-2xl hover:text-white hover:bg-black hover:underline font-bold"
+                >
+                  services
+                </a>
+              </li>
             </ul>
           </nav>
           <div className="flex justify-center items-center ">

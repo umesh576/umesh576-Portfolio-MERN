@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProjectName = ({ projects, key }) => {
+const ProjectName = ({ projects }) => {
   return (
     <div className="inline">
       <h1>{projects.name}</h1>
