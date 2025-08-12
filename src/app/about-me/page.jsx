@@ -5,6 +5,7 @@ import SkillDetails from "@/component/skill/SkillDetails";
 import React from "react";
 import Image from "next/image";
 import LanguageComponmnet from "@/component/languageComp/LanguageComponmnet";
+import DatabaseCard from "@/component/Database/DatabaseCard";
 
 const AboutMe = () => {
   return (
@@ -40,6 +41,16 @@ const AboutMe = () => {
           <LanguageComponmnet />
           {/* <SkillDetails /> */}
           {/* <SkillCard /> */}
+        </div>
+      </div>
+      <div className="p-1">
+        <div className="p-4">
+          <h1 className="text-3xl font-extrabold text-center text-violet-500">
+            Database
+          </h1>
+        </div>
+        <div className="p-10">
+          <DatabaseCard />
         </div>
       </div>
     </div>

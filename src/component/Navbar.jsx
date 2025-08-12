@@ -42,7 +42,7 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="/about-me"
+                  href="/services-me"
                   className="px-3 py-1 rounded-2xl hover:text-white hover:bg-black hover:underline font-bold"
                 >
                   services
