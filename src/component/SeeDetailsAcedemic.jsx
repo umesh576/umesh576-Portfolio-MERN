@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import AceddemicCard from "./Acedemic/AcedemicCard";
+import CertificateCard from "./Acedemic/CertificateCard";
+import AcheveiMentCard from "./Acedemic/AcheveiMentCard";
+import ParticipationCard from "./Acedemic/ParticipationCard";
 
 const SeeDetailsAcedemic = () => {
   const [acedemic, setacedemic] = useState(true);
@@ -81,9 +84,21 @@ const SeeDetailsAcedemic = () => {
               <AceddemicCard />
             </div>
           )}
-          {certification && <div>certification</div>}
-          {achivement && <div>achivements</div>}
-          {partipation && <div>partipation</div>}
+          {certification && (
+            <div>
+              <CertificateCard />
+            </div>
+          )}
+          {achivement && (
+            <div>
+              <AcheveiMentCard />
+            </div>
+          )}
+          {partipation && (
+            <div>
+              <ParticipationCard />
+            </div>
+          )}
         </div>
       </div>
     </div>

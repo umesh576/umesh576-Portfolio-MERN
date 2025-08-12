@@ -5,31 +5,30 @@ const AceddemicCard = () => {
   const [level, setLevel] = useState(false);
   const [bachelor, setBachelor] = useState(false);
   return (
-    <div>
+    <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow space-y-4">
       <div>
-        <div>
-          <div className="font-normal">
-            <li className="font-bold py-1">SEE</li>
-            <p>
-              I completed my see level from Khaptad vidya niketan with securing
-              3.25gpa which is located in kailai chaukidada,Nepal.
-            </p>
-            <li className="font-bold py-1">+2 level</li>
-            <p>
-              I completed my +2 level from Awisharaya Vidya Niketan in science
-              faculty.
-            </p>
-            <li className="font-bold py-1">Bachelor</li>
-            <p>
-              Currently I am Studying in Himalayan Whitejouse International
-              Collage with pursing my degree in Bachelor of information and
-              technology(BIT)
-            </p>
-          </div>
-          <div>{isSee && <div>see level education</div>}</div>
-          <div>{level && <div> +2 level edication</div>}</div>
-          <div>{bachelor && <div>bachelor level education</div>}</div>
-        </div>
+        <li className="font-bold text-lg text-gray-800">SEE</li>
+        <p className="font-normal text-gray-600 mt-1">
+          I completed my SEE level from Khaptad Vidya Niketan, securing a 3.25
+          GPA. It is located in Kailai Chaukidada, Nepal.
+        </p>
+      </div>
+
+      <div>
+        <li className="font-bold text-lg text-gray-800">+2 Level</li>
+        <p className="font-normal text-gray-600 mt-1">
+          I completed my +2 level from Awisharaya Vidya Niketan in the Science
+          faculty.
+        </p>
+      </div>
+
+      <div>
+        <li className="font-bold text-lg text-gray-800">Bachelor</li>
+        <p className="font-normal text-gray-600 mt-1">
+          Currently, I am studying at Himalayan Whitehouse International
+          College, pursuing my degree in Bachelor of Information Technology
+          (BIT).
+        </p>
       </div>
     </div>
   );

@@ -1,5 +1,8 @@
+"use client";
 import React from "react";
 import ProjectCard from "../../component/project-details/ProjectCard";
+
+import SimpleSlider from "./../../component/projectImage/SimpleSlider";
 const MyProject = () => {
   const project = [1, 2];
   return (
