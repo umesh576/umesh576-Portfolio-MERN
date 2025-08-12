@@ -11,7 +11,7 @@ const AboutMe = () => {
     <div className="text-black w-full relative top-20 ">
       {/* <Description /> */}
 
-      <div className="flex p-5">
+      <div className="flex p-15 gap-20 w-full justify-center ">
         <div className="rounded-lg">
           <Image
             src={"/ownbg.jpeg"}
@@ -23,9 +23,11 @@ const AboutMe = () => {
         </div>
         <div className=" px-1 py-0  font-bold object-cover w-full">
           <div className="text-2xl">
-            <h1 className="text-center text-violet-600">Education and skill</h1>
+            <h1 className="text-center text-pretty text-violet-600">
+              Education and skill
+            </h1>
           </div>
-          <div>
+          <div className="relative top-5">
             <SeeDetailsAcedemic />
           </div>
         </div>

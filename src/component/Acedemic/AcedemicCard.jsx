@@ -8,17 +8,23 @@ const AceddemicCard = () => {
     <div>
       <div>
         <div>
-          <div>
-            <li>SEE</li>
-            <p className="font-normal">
+          <div className="font-normal">
+            <li className="font-bold py-1">SEE</li>
+            <p>
               I completed my see level from Khaptad vidya niketan with securing
               3.25gpa which is located in kailai chaukidada,Nepal.
             </p>
-            <br />
-            <li>+2 level</li>
-            <br />
-            <li>Bachelor</li>
-            <br />
+            <li className="font-bold py-1">+2 level</li>
+            <p>
+              I completed my +2 level from Awisharaya Vidya Niketan in science
+              faculty.
+            </p>
+            <li className="font-bold py-1">Bachelor</li>
+            <p>
+              Currently I am Studying in Himalayan Whitejouse International
+              Collage with pursing my degree in Bachelor of information and
+              technology(BIT)
+            </p>
           </div>
           <div>{isSee && <div>see level education</div>}</div>
           <div>{level && <div> +2 level edication</div>}</div>
