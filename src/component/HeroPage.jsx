@@ -16,7 +16,9 @@ const HeroPage = () => {
               Hey,I'm Umesh🖖
             </h3>
             <h1 className="text-7xl font-extrabold">
-              <span className="text-violet-700">Fullstack</span>
+              <span className="text-violet-700 animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-5xl  font-bold">
+                Fullstack
+              </span>
               <br />
               Developer
             </h1>
