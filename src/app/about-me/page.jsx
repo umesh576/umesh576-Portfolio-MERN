@@ -9,7 +9,7 @@ import DatabaseCard from "@/component/Database/DatabaseCard";
 
 const AboutMe = () => {
   return (
-    <div className="text-black w-full relative top-20 ">
+    <div className="text-black  py-10">
       <div className="flex p-15 gap-20 w-full  ">
         <div className="rounded-lg">
           <Image
@@ -40,15 +40,15 @@ const AboutMe = () => {
             <LanguageComponmnet />
           </div>
         </div>
-      </div>
-      <div className="p-1">
-        <div className="p-4">
-          <h1 className="text-3xl font-extrabold text-center text-violet-500">
-            Database
-          </h1>
-        </div>
-        <div className="p-10">
-          <DatabaseCard />
+        <div className="p-1">
+          <div className="p-4">
+            <h1 className="text-3xl font-extrabold text-center text-violet-500">
+              Database
+            </h1>
+          </div>
+          <div className="p-10">
+            <DatabaseCard />
+          </div>
         </div>
       </div>
     </div>
