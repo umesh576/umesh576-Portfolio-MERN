@@ -11,7 +11,7 @@ const SeeDetailsAcedemic = () => {
   const [partipation, setpartipation] = useState(false);
 
   return (
-    <div>
+    <div className="relative">
       <div>
         <div className="flex gap-5 py-2 px-5  font-normal ">
           <div>
