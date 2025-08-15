@@ -28,22 +28,22 @@ const AboutMe = () => {
               Education And Certificate
             </h1>
           </div>
-          <div className="relative top-2">
+          <div className=" ">
             <SeeDetailsAcedemic />
           </div>
         </div>
       </div>
-      <div className="p-1">
+      <div className="p-1 ">
         <div className="p-4">
           <h1 className="text-5xl font-extrabold text-center">My Skill</h1>
         </div>
-        <div className="p-10">
+        <div className="p-10 ">
           <LanguageComponmnet />
           {/* <SkillDetails /> */}
           {/* <SkillCard /> */}
         </div>
       </div>
-      <div className="p-1">
+      <div className="p-1 ">
         <div className="p-4">
           <h1 className="text-3xl font-extrabold text-center text-violet-500">
             Database
