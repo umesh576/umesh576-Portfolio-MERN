@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
         <div className="relative w-full">
           <Navbar />
         </div>
-        <div className="relative ">{children}</div>
+        <div className=" ">{children}</div>
         <div className="">
           <Footer />
         </div>

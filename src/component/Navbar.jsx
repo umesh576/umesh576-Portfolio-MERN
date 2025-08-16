@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 const Navbar = () => {
   const router = useRouter();
   return (
-    <div className="w-full fixed top-0 bg-white/10 backdrop-blur-md p-3 z-10">
+    <div className="w-full sticky  bg-white/10 backdrop-blur-md p-3 z-10">
       <div className="flex justify-between text-white cursor-pointer">
         <div className="w-1/2">
           <Image src={"/logo.png"} width={200} height={100} alt="logo" />
