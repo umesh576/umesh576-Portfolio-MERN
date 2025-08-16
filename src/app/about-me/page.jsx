@@ -10,7 +10,7 @@ import DatabaseCard from "@/component/Database/DatabaseCard";
 const AboutMe = () => {
   return (
     <div className="text-black  py-10">
-      <div className="flex p-15 gap-20 w-full  ">
+      <div className="flex p-15 ">
         <div className="rounded-lg">
           <Image
             src={"/ownbg.jpeg"}
