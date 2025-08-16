@@ -35,7 +35,7 @@ const AboutMe = () => {
         <div className="p-4">
           <h1 className="text-5xl font-extrabold text-center">My Skill</h1>
         </div>
-        <div>
+        <div className="relative">
           <div className="p-10 ">
             <LanguageComponmnet />
           </div>
