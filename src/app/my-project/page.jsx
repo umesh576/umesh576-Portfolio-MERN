@@ -1,10 +1,17 @@
 "use client";
 import React from "react";
 import ProjectCard from "../../component/project-details/ProjectCard";
+import Image from "next/image";
 
 import SimpleSlider from "./../../component/projectImage/SimpleSlider";
 const MyProject = () => {
   const project = [1, 2];
+  const images = [
+    { src: "/project/1.png", alt: "Project 1" },
+    { src: "/project/2.png", alt: "Project 2" },
+    { src: "/project/3.png", alt: "Project 3" },
+    { src: "/project/4.png", alt: "Project 4" },
+  ];
   return (
     <div className="">
       <div className="w-full">
@@ -13,7 +20,7 @@ const MyProject = () => {
         </div>
         <div className="p-10 text-black ">
           <div className="flex gap-30 flex-wrap justify-center">
-            <SimpleSlider images={images} />
+            {/* <SimpleSlider images={images} />   */}
             {project.map((value, index) => {
               return <ProjectCard key={index} values={value} />;
             })}

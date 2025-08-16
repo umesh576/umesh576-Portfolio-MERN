@@ -1,115 +1,49 @@
-import * as motion from "motion/react-client";
-// import type { Variants } from "motion/react";
-import { IoMdContact } from "react-icons/io";
+import React from "react";
+import { Slide } from "react-slideshow-image";
+import "react-slideshow-image/dist/styles.css";
 
-export default function ScrollTriggered() {
+const spanStyle = {
+  padding: "20px",
+  background: "#efefef",
+  color: "#000000",
+};
+
+const divStyle = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  backgroundSize: "cover",
+  height: "400px",
+};
+const slideImages = [
+  {
+    url: "https://images.unsplash.com/photo-1509721434272-b79147e0e708?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
+    caption: "Slide 1",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1506710507565-203b9f24669b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1536&q=80",
+    caption: "Slide 2",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1536987333706-fc9adfb10d91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
+    caption: "Slide 3",
+  },
+];
+
+const Slideshow = () => {
   return (
-    <div style={container}>
-      {food.map(([emoji, hueA, hueB], i) => (
-        <Card i={i} emoji={emoji} hueA={hueA} hueB={hueB} key={emoji} />
-      ))}
+    <div className="slide-container">
+      <Slide>
+        {slideImages.map((slideImage, index) => (
+          <div key={index}>
+            <div
+              style={{ ...divStyle, backgroundImage: `url(${slideImage.url})` }}
+            >
+              <span style={spanStyle}>{slideImage.caption}</span>
+            </div>
+          </div>
+        ))}
+      </Slide>
     </div>
   );
-}
-
-// interface CardProps {
-//     emoji: string
-//     hueA
-//     hueB
-//     i
-// }
-
-function Card({ emoji, hueA, hueB, i }) {
-  const background = `linear-gradient(306deg, ${hue(hueA)}, ${hue(hueB)})`;
-
-  return (
-    <motion.div
-      className={`card-container-${i}`}
-      style={cardContainer}
-      initial="offscreen"
-      whileInView="onscreen"
-      viewport={{ amount: 0.8 }}
-    >
-      <div style={{ ...splash, background }} />
-      <motion.div style={card} variants={cardVariants} className="card">
-        {emoji}
-      </motion.div>
-    </motion.div>
-  );
-}
-
-const cardVariants = {
-  offscreen: {
-    y: 300,
-  },
-  onscreen: {
-    y: 50,
-    rotate: -10,
-    transition: {
-      type: "spring",
-      bounce: 0.4,
-      duration: 0.8,
-    },
-  },
 };
-
-const hue = (h) => `hsl(${h}, 100%, 50%)`;
-
-/**
- * ==============   Styles   ================
- */
-
-const container = {
-  margin: "100px auto",
-  maxWidth: 500,
-  paddingBottom: 100,
-  width: "100%",
-};
-
-const cardContainer = {
-  overflow: "hidden",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  position: "relative",
-  paddingTop: 20,
-  marginBottom: -120,
-};
-
-const splash = {
-  position: "absolute",
-  top: 0,
-  left: 0,
-  right: 0,
-  bottom: 0,
-  clipPath: `path("M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z")`,
-};
-
-const card = {
-  fontSize: 164,
-  width: 300,
-  height: 430,
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  borderRadius: 20,
-  background: "#f5f5f5",
-  boxShadow:
-    "0 0 1px hsl(0deg 0% 0% / 0.075), 0 0 2px hsl(0deg 0% 0% / 0.075), 0 0 4px hsl(0deg 0% 0% / 0.075), 0 0 8px hsl(0deg 0% 0% / 0.075), 0 0 16px hsl(0deg 0% 0% / 0.075)",
-  transformOrigin: "10% 60%",
-};
-
-/**
- * ==============   Data   ================
- */
-
-const food = [
-  [<IoMdContact />, 340, 10],
-  ["🍊", 20, 40],
-  ["🍋", 60, 90],
-  ["🍐", 80, 120],
-  ["🍏", 100, 140],
-  ["🫐", 205, 245],
-  ["🍆", 260, 290],
-  ["🍇", 290, 320],
-];
