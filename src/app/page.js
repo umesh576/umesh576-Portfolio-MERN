@@ -12,8 +12,8 @@ import BackgroundPage from "./../component/BackgroundPage";
 </head>;
 export default function Home() {
   return (
-    <div className="text-black mt-10">
-      <div className="w-full  flex relative top-20">
+    <div className="text-black h-screen">
+      <div className="w-full  flex relative ">
         <div className=" text-black w-1/2 ">
           <HeroPage />
         </div>

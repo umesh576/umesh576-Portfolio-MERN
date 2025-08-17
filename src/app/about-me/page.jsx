@@ -1,7 +1,5 @@
 "use client";
 import SeeDetailsAcedemic from "@/component/SeeDetailsAcedemic";
-import SkillDetails from "@/component/skill/SkillDetails";
-// import SkillCard from "@/component/skill/SkillCard";
 import React from "react";
 import Image from "next/image";
 import LanguageComponmnet from "@/component/languageComp/LanguageComponmnet";

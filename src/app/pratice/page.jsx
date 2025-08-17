@@ -5,7 +5,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { FaArrowLeftLong } from "react-icons/fa6";
 
 const images = ["/backgroung.jpg", "/bg.png", "/logo.png"];
-const MyProject = () => {
+const MyProjectpra = () => {
   const [index, setIndex] = useState(0);
 
   const handlePrev = () => {

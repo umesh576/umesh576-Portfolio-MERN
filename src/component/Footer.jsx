@@ -8,11 +8,11 @@ import { toast, ToastContainer } from "react-toastify";
 const Footer = () => {
   const copyToClipboard = async (text) => {
     navigator.clipboard.writeText(text).then(() => {
-      toast("Email is copied to clipboard.");
+      toast.success("Email is copied to clipboard.");
     });
   };
   return (
-    <div className="text-white bg-black   ">
+    <div className="text-white bg-black">
       <div className="flex justify-between py-3 px-5">
         <div className="flex items-center gap-1 hover:text-gray-400">
           <FaRegCopyright />
@@ -24,12 +24,10 @@ const Footer = () => {
         <div className="flex items-center gap-1 hover:text-gray-400">
           <MdEmail />
           <div className="relative inline-block group cursor-pointer">
-            {/* Tooltip */}
             <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 px-2 py-1 text-xs text-white bg-gray-800 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
               Click to copy
             </div>
 
-            {/* Clickable Text */}
             <p
               onClick={() => copyToClipboard("uj19343@gmail.com")}
               className="text-white "

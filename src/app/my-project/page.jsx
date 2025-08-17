@@ -1,9 +1,8 @@
 "use client";
 import React from "react";
-import ProjectCard from "../../component/project-details/ProjectCard";
-import Image from "next/image";
-
-import SimpleSlider from "./../../component/projectImage/SimpleSlider";
+import ProjectCard from "./../../component/project-details/ProjectCard";
+import ImageCard from "../../component/ImageCard";
+// import ProjectSecond from "@/component/project-details/ProjectSecond";
 const MyProject = () => {
   const project = [1, 2];
   const images = [
@@ -14,6 +13,16 @@ const MyProject = () => {
   ];
   return (
     <div className="">
+      <div>
+        <h1>Demo ProjectCard</h1>
+        <div className="py-10">
+          <div>
+            <ImageCard />
+            {/* <ProjectSecond /> */}
+            <p className="text-center">this is my first project</p>
+          </div>
+        </div>
+      </div>
       <div className="w-full">
         <div className="w-full text-4xl font-extrabold text-center py-10">
           <h1>My Project</h1>

@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
         <div className="relative w-full">
           <Navbar />
         </div>
-        <div className=" ">{children}</div>
+        <div className="h-min-screen ">{children}</div>
         <div className="">
           <Footer />
         </div>
