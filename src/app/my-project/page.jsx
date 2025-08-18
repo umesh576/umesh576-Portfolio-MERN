@@ -3,11 +3,19 @@ import React from "react";
 import ProjectCard from "./../../component/project-details/ProjectCard";
 import ImageCard from "../../component/ImageCard";
 // import ProjectSecond from "@/component/project-details/ProjectSecond";
-const images = [
-  ["/backgroung.jpg", "/bg.png", "/logo.png"],
-  ["/backgroung.jpg", "/bg.png", "/logo.png"],
-];
 const MyProject = () => {
+  // const images = ["/backgroung.jpg", "/bg.png", "/logo.png"];
+  const projectDetails = {
+    images: [
+      ["/backgroung.jpg", "/bg.png", "/logo.png"],
+      ["/backgroung.jpg", "/bg.png", "/logo.png"],
+    ],
+    name: [],
+  };
+  const images = [
+    ["/backgroung.jpg", "/bg.png", "/logo.png"],
+    ["/backgroung.jpg", "/bg.png", "/logo.png"],
+  ];
   const project = [1, 2];
 
   return (
@@ -15,9 +23,9 @@ const MyProject = () => {
       <div>
         <h1>Demo ProjectCard</h1>
         <div className="py-10">
-          <div>
+          <div className="flex">
             {images.map((image, index) => {
-              <ImageCard images={image} key={index} />;
+              return <ImageCard imagees={image} key={index} />;
             })}
             <p className="text-center">this is my first project</p>;
           </div>

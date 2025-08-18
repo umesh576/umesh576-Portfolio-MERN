@@ -5,24 +5,24 @@ import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 // const images = ["/backgroung.jpg", "/bg.png", "/logo.png"];
 
-const ImageCard = ({ images }) => {
+const ImageCard = ({ imagees }) => {
   const [index, setIndex] = useState(0);
 
   const handleNext = () => {
-    setIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    setIndex((prev) => (prev === imagees.length - 1 ? 0 : prev + 1));
   };
 
   const handlePrev = () => {
-    setIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    setIndex((prev) => (prev === 0 ? imagees.length - 1 : prev - 1));
   };
-  console.log("images", images);
+  console.log("images", imagees);
 
   return (
     <div className="flex justify-center items-center w-full px-4 py-6">
       <div className="relative w-[250px] h-[180px] sm:w-[350px] sm:h-[240px] md:w-[450px] md:h-[300px] rounded-lg shadow-lg overflow-hidden group">
         {/* Image */}
         <Image
-          src={images[index] || "/backgoung.jpg"}
+          src={imagees[index] || "/backgoung.jpg"}
           alt="image"
           fill
           className="object-cover rounded-lg animate-fadeIn"
