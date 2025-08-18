@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
-const images = ["/backgroung.jpg", "/bg.png", "/logo.png"];
+// const images = ["/backgroung.jpg", "/bg.png", "/logo.png"];
 
-const ImageCard = () => {
+const ImageCard = ({ images }) => {
   const [index, setIndex] = useState(0);
 
   const handleNext = () => {
@@ -15,13 +15,13 @@ const ImageCard = () => {
   const handlePrev = () => {
     setIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
+  console.log("images", images);
 
   return (
     <div className="flex justify-center items-center w-full px-4 py-6">
       <div className="relative w-[250px] h-[180px] sm:w-[350px] sm:h-[240px] md:w-[450px] md:h-[300px] rounded-lg shadow-lg overflow-hidden group">
         {/* Image */}
         <Image
-          key={index} // forces re-render on change
           src={images[index] || "/backgoung.jpg"}
           alt="image"
           fill

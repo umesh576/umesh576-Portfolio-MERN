@@ -3,23 +3,23 @@ import React from "react";
 import ProjectCard from "./../../component/project-details/ProjectCard";
 import ImageCard from "../../component/ImageCard";
 // import ProjectSecond from "@/component/project-details/ProjectSecond";
+const images = [
+  ["/backgroung.jpg", "/bg.png", "/logo.png"],
+  ["/backgroung.jpg", "/bg.png", "/logo.png"],
+];
 const MyProject = () => {
   const project = [1, 2];
-  const images = [
-    { src: "/project/1.png", alt: "Project 1" },
-    { src: "/project/2.png", alt: "Project 2" },
-    { src: "/project/3.png", alt: "Project 3" },
-    { src: "/project/4.png", alt: "Project 4" },
-  ];
+
   return (
     <div className="">
       <div>
         <h1>Demo ProjectCard</h1>
         <div className="py-10">
           <div>
-            <ImageCard />
-            {/* <ProjectSecond /> */}
-            <p className="text-center">this is my first project</p>
+            {images.map((image, index) => {
+              <ImageCard images={image} key={index} />;
+            })}
+            <p className="text-center">this is my first project</p>;
           </div>
         </div>
       </div>
@@ -29,7 +29,6 @@ const MyProject = () => {
         </div>
         <div className="p-10 text-black ">
           <div className="flex gap-30 flex-wrap justify-center">
-            {/* <SimpleSlider images={images} />   */}
             {project.map((value, index) => {
               return <ProjectCard key={index} values={value} />;
             })}
