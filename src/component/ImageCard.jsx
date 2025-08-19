@@ -15,10 +15,9 @@ const ImageCard = ({ imagees }) => {
   const handlePrev = () => {
     setIndex((prev) => (prev === 0 ? imagees.length - 1 : prev - 1));
   };
-  console.log("images", imagees);
 
   return (
-    <div className="flex justify-center items-center w-full px-4 py-6">
+    <div className="flex justify-center items-center  px-4 py-6">
       <div className="relative w-[250px] h-[180px] sm:w-[350px] sm:h-[240px] md:w-[450px] md:h-[300px] rounded-lg shadow-lg overflow-hidden group">
         {/* Image */}
         <Image
