@@ -8,18 +8,15 @@ const MyProject = () => {
   // const images = ["/backgroung.jpg", "/bg.png", "/logo.png"];
   const projectDetails = [
     {
-      images: [
-        ["/backgroung.jpg", "/bg.png", "/logo.png"],
-        ["/backgroung.jpg", "/bg.png", "/logo.png"],
-      ],
+      images: ["/backgroung.jpg", "/bg.png", "/logo.png"],
       name: "umesh",
     },
   ];
-  const images = [
-    ["/backgroung.jpg", "/bg.png", "/logo.png"],
-    ["/backgroung.jpg", "/bg.png", "/logo.png"],
-    ["/backgroung.jpg", "/bg.png", "/logo.png"],
-  ];
+  // const images = [
+  //   ["/backgroung.jpg", "/bg.png", "/logo.png"],
+  //   ["/backgroung.jpg", "/bg.png", "/logo.png"],
+  //   ["/backgroung.jpg", "/bg.png", "/logo.png"],
+  // ];
   const project = [1, 2];
 
   return (
@@ -36,16 +33,7 @@ const MyProject = () => {
           </div>
         </div>
       </div>
-      {/* <div>
-        <h1>Demo ProjectCard</h1>
-        <div className="py-10">
-          <div className="flex flex-wrap justify-around">
-            {images.map((image, index) => {
-              return <ImageCard imagees={image} key={index} />;
-            })}
-          </div>
-        </div>
-      </div> */}
+
       <div className="w-full">
         <div className="w-full text-4xl font-extrabold text-center py-10">
           <h1>My Project</h1>
