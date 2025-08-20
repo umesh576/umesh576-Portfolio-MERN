@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import ImageCard from "../ImageCard";
+import { toast } from "react-toastify";
 const ProjetCardThird = ({ projectDetail }) => {
   return (
     <div>
@@ -13,8 +14,8 @@ const ProjetCardThird = ({ projectDetail }) => {
           </div>
         </div>
         <div>
-          <h1 className="text-center p-0 text-5xl">
-            Project Name:{" "}
+          <h1 className="text-center p-0 text-3xl">
+            Project Name:
             <span className="font-bold">{projectDetail.name}</span>
           </h1>
         </div>
