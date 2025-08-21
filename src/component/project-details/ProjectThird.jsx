@@ -7,7 +7,7 @@ const ProjetCardThird = ({ projectDetail }) => {
     <div>
       <div>
         <div className="py-2">
-          <div className="flex flex-wrap justify-center">
+          <div className="flex flex-wrap justify-center rounded-lg">
             {/* {projectDetail.images.map((image, index) => { */}
             {/* return */}
             <ImageCard imagees={projectDetail.images} />;{/* })} */}
@@ -23,7 +23,7 @@ const ProjetCardThird = ({ projectDetail }) => {
           <button className="px-3 bg-black text-white rounded-lg hover:bg-gray-300 cursor-pointer  hover:text-black">
             See demo
           </button>
-          <button className="px-3 py-2 bg-gray-200 text-black text-lg rounded-lg hover:bg-gray-500 cursor-pointer  hover:text-black hover:animate-pulse">
+          <button className="px-3 py-2 bg-gray-200 text-black text-lg rounded-lg hover:bg-gray-500 cursor-pointer  hover:text-black hover:animate-pulse" >
             View Code
           </button>
         </div>
