@@ -1,8 +1,9 @@
 "use client";
 import React from "react";
 import ImageCard from "../ImageCard";
-import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 const ProjetCardThird = ({ projectDetail }) => {
+  const projectLink = projectDetail.code;
   return (
     <div>
       <div>
@@ -23,7 +24,7 @@ const ProjetCardThird = ({ projectDetail }) => {
           <button className="px-3 bg-black text-white rounded-lg hover:bg-gray-300 cursor-pointer  hover:text-black">
             See demo
           </button>
-          <button className="px-3 py-2 bg-gray-200 text-black text-lg rounded-lg hover:bg-gray-500 cursor-pointer  hover:text-black hover:animate-pulse" >
+          <button className="px-3 py-2 bg-gray-200 text-black text-lg rounded-lg hover:bg-gray-500 cursor-pointer  hover:text-black hover:animate-pulse">
             View Code
           </button>
         </div>
