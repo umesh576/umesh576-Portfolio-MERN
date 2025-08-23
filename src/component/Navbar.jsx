@@ -23,7 +23,9 @@ const Navbar = () => {
         {/* Logo */}
         <div className="w-1/2 md:w-1/4">
           <Image
-            src={"/logo.png"}
+            src={
+              "https://res.cloudinary.com/dudpopk4h/image/upload/v1755970289/uploads/logo-1755970288237.png"
+            }
             width={200}
             height={100}
             alt="logo"

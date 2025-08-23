@@ -1,3 +1,4 @@
+// ProjetCardThird.jsx
 "use client";
 import React, { useState } from "react";
 import ImageCard from "../ImageCard";
@@ -9,9 +10,9 @@ const ProjetCardThird = ({ projectDetail }) => {
   const [demo, setdemo] = useState(false);
 
   return (
-    <div className="w-full max-w-3xl mx-auto bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-4 sm:p-6 lg:p-8 relative">
+    <div className="w-full max-w-5xl mx-auto bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-4 sm:p-6 lg:p-8 relative">
       {/* Project Images */}
-      <div className="flex flex-wrap justify-center rounded-lg overflow-hidden">
+      <div className="w-full rounded-lg overflow-hidden">
         <ImageCard imagees={projectDetail.images} />
       </div>
 
@@ -27,9 +28,7 @@ const ProjetCardThird = ({ projectDetail }) => {
       <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mt-5">
         <button
           className="px-4 py-2 text-sm sm:text-base bg-black text-white rounded-lg cursor-pointer hover:bg-gray-300 hover:text-black transition duration-200"
-          onClick={() => {
-            setdemo(true);
-          }}
+          onClick={() => setdemo(true)}
         >
           See Demo
         </button>

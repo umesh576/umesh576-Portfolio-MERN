@@ -15,9 +15,8 @@ const ImageCard = ({ imagees }) => {
   };
 
   return (
-    <div className="flex justify-center items-center px-2 sm:px-4 py-4 sm:py-6 w-full">
-      <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-48 sm:h-60 md:h-72 lg:h-80 shadow-lg cursor-pointer group rounded-xl overflow-hidden">
-        {/* Image */}
+    <div className="flex justify-center items-center w-full px-2 sm:px-4 py-4 sm:py-6">
+      <div className="relative w-full h-64 sm:h-72 md:h-80 lg:h-80 shadow-lg cursor-pointer group rounded-xl overflow-hidden">
         <Image
           src={imagees[index] || "/backgoung.jpg"}
           alt="image"
