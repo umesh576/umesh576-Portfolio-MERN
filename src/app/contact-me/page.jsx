@@ -13,7 +13,7 @@ const ContactMe = () => {
     reset,
   } = useForm();
 
-  const onSubmit = async (data) => {
+  const onSubmit = (data) => {
     console.log("Env Variables:", {
       serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
       templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
@@ -21,27 +21,42 @@ const ContactMe = () => {
     });
     setIsSubmitting(true);
 
-    try {
-      const response = await fetch("/.netlify/functions/sendEmail", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      const result = await response.json();
-
-      if (result.success) {
+    // Send email using EmailJS
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        {
+          name: data.fullName, // Matches {{name}} in template
+          time: new Date().toLocaleString(), // Matches {{time}} in template
+          message: data.message, // Matches {{message}} in template
+          // Additional data you might want to include:
+          email: data.email,
+          subject: data.subject,
+          purpose: data.purpose,
+          to_name: "Umesh Joshi",
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_USER_ID
+      )
+      .then((result) => {
+        console.log("Email sent successfully:", result.text);
         alert("Message Sent Successfully ✅");
         reset();
         setPurpose("");
-      } else {
-        alert("Failed to send message.");
-      }
-    } catch (err) {
-      console.error(err);
-      alert("Error sending message.");
-    } finally {
-      setIsSubmitting(false);
-    }
+      })
+      .catch((error) => {
+        console.error("Failed to send email:", error);
+        console.log("Service ID:", process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID);
+        console.log(
+          "Template ID:",
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+        );
+        console.log("User ID:", process.env.NEXT_PUBLIC_EMAILJS_USER_ID);
+        alert("Failed to send message. Please try again later.");
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
 
   return (
