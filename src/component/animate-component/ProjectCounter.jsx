@@ -23,7 +23,7 @@ const ProjectCounter = () => {
   });
 
   return (
-    <motion.pre className="inline text-violet-400 text-2xl font-bold">
+    <motion.pre className="inline text-xl sm:text-2xl md:text-4xl lg:text-5xl font-extrabold text-violet-500 tracking-wide">
       {displayCount}
     </motion.pre>
   );
