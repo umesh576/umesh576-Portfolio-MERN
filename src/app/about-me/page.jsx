@@ -13,7 +13,9 @@ const AboutMe = () => {
         {/* Image container */}
         <div className="rounded-lg w-full lg:w-1/2 flex justify-center">
           <Image
-            src={"/ownbg.jpeg"}
+            src={
+              "https://res.cloudinary.com/dudpopk4h/image/upload/v1755970787/uploads/ownbg-1755970785238.jpg"
+            }
             width={500}
             height={1000}
             alt="image"
