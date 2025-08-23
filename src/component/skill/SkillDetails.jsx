@@ -1,6 +1,5 @@
 import React from "react";
 import SkillCard from "./SkillCard";
-import { xxx } from "next/server";
 
 const SkillDetails = () => {
   const skills = [
@@ -27,9 +26,10 @@ const SkillDetails = () => {
       projects: [{ name: "Tourish managemnt system", url: "http" }],
     },
   ];
+
   return (
-    <div className="px-6 py-3">
-      <div className="flex gap-20 hover:transform-view">
+    <div className="px-4 sm:px-6 py-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 lg:gap-20">
         {skills.map((skill, index) => {
           return <SkillCard skill={skill} key={index} />;
         })}

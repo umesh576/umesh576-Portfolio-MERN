@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../../styles/Slider.css";
-// import Image from "next/image";
 import Image from "next/image";
 
 const SimpleSlider = ({ images }) => {
@@ -15,20 +14,46 @@ const SimpleSlider = ({ images }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: 2,
+    adaptiveHeight: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          arrows: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: true,
+          dots: true,
+          centerMode: false,
+        },
+      },
+    ],
   };
 
   return (
-    <div className="w-full relative">
+    <div className="w-full max-w-4xl mx-auto px-2 sm:px-4 md:px-6">
       <Slider {...settings}>
         {images.map((image, index) => (
-          <div key={index} className="px-2">
-            <div className=" ">
+          <div key={index} className="px-1 sm:px-2">
+            <div className="relative aspect-video sm:aspect-[16/9] md:aspect-[21/9]">
               <Image
                 src={image.src}
                 alt={image.alt}
-                width={1000}
-                height={1000}
-                className="object-fill   rounded-lg  hover:scale-105 transition-transform duration-300"
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 80vw, 70vw"
+                className="object-cover rounded-lg hover:scale-105 transition-transform duration-300"
+                priority={index === 2}
               />
             </div>
           </div>
@@ -37,4 +62,5 @@ const SimpleSlider = ({ images }) => {
     </div>
   );
 };
+
 export default SimpleSlider;

@@ -3,18 +3,18 @@ import Image from "next/image";
 
 const BackgroundPage = () => {
   return (
-    <div className="w-full  relative flex ">
+    <div className="w-full relative flex justify-center items-center p-4">
       <div className="w-full flex justify-center">
-        {/* <Image src={"/bg.png"} width={800} height={800} alt={"admin"} /> */}
-        <div>
-          <div className="border-1 border-violet-300 rounded-full p-5">
-            <div className="p-0 border-1 border-violet-300 rounded-full">
+        <div className="border-2 border-violet-300 rounded-full p-3 sm:p-4 md:p-5 lg:p-6">
+          <div className="border-2 border-violet-300 rounded-full overflow-hidden">
+            <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80">
               <Image
-                className="rounded-full object-cover"
+                className="object-cover"
                 src={"/ownbg.jpeg"}
-                width={400}
-                height={400}
-                alt="Image"
+                fill
+                alt="Profile image"
+                sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, (max-width: 1024px) 256px, (max-width: 1280px) 288px, 320px"
+                priority
               />
             </div>
           </div>
