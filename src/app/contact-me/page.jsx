@@ -1,74 +1,136 @@
 "use client";
 import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 
 const ContactMe = () => {
-  const [purpose, setpurpose] = useState("");
-  const handlechange = (e) => {
-    setpurpose(e.target.value);
+  const [purpose, setPurpose] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log("Form Data:", data);
+    alert("Message Sent Successfully ✅");
+    reset(); // clear form after submission
   };
-  console.log("purpose", purpose);
+
   return (
-    <div className="flex justify-center items-center p-2">
-      <div>
-        <h1 className="text-3xl text-center font-bold">Send Message</h1>
+    <div className="flex justify-center items-center min-h-screen bg-gray-50 p-4">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="w-full max-w-lg bg-white shadow-xl rounded-2xl p-6 space-y-4"
+      >
+        <h1 className="text-3xl text-center font-bold text-gray-800 mb-6">
+          Send Message
+        </h1>
+
+        {/* Full Name */}
         <div>
-          <div className="p-1 ">
-            <div>
-              <input
-                type="text"
-                name="fullName"
-                className="border-b-1 "
-                placeholder="Fullname"
-                required
-              />
-            </div>
-            <div>
-              <input type="text" />
-            </div>
-            <div>
-              <input
-                type="Email"
-                name="email"
-                className="border-b-1"
-                required
-                placeholder="jhon@gmai.com"
-              />
-            </div>
-            <div className="flex gap-2">
-              <label htmlFor="purpose">Purpose:</label>
-              <div>
-                <select
-                  name="selectPurpose"
-                  id="selectPurpose"
-                  className="border"
-                  onChange={handlechange}
-                >
-                  <option value="umesh">umesh</option>
-                  <option value="joshi">joshi</option>
-                </select>
-              </div>
-            </div>
-            {purpose && (
-              <div>
-                <p>Selected purpose: {purpose}</p>
-              </div>
-            )}
-            <div>
-              <textarea
-                name="message"
-                id="message"
-                className="border"
-                placeholder="Type your message..."
-              ></textarea>
-            </div>
-          </div>
-          <div>
-            <button className="px-5 rounded-lg bg-black py-2 text-white  hover:bg-gray-600">
-              Send Message
-            </button>
-          </div>
+          <input
+            type="text"
+            placeholder="Full Name"
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            {...register("fullName", { required: "Full name is required" })}
+          />
+          {errors.fullName && (
+            <p className="text-red-500 text-sm mt-1">
+              {errors.fullName.message}
+            </p>
+          )}
         </div>
-      </div>
+
+        {/* Subject */}
+        <div>
+          <input
+            type="text"
+            placeholder="Subject"
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            {...register("subject", { required: "Subject is required" })}
+          />
+          {errors.subject && (
+            <p className="text-red-500 text-sm mt-1">
+              {errors.subject.message}
+            </p>
+          )}
+        </div>
+
+        {/* Email */}
+        <div>
+          <input
+            type="email"
+            placeholder="john@gmail.com"
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            {...register("email", {
+              required: "Email is required",
+              pattern: {
+                value: /^\S+@\S+$/i,
+                message: "Invalid email address",
+              },
+            })}
+          />
+          {errors.email && (
+            <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+          )}
+        </div>
+
+        {/* Purpose */}
+        <div>
+          <label className="block mb-1 font-medium text-gray-700">
+            For which purpose you want to contact with me
+          </label>
+          <select
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            {...register("purpose", { required: "Please select a purpose" })}
+            onChange={(e) => setPurpose(e.target.value)}
+          >
+            <option value="">Select Purpose</option>
+            <option value="Business Inquiry">Website Building</option>
+            <option value="Collaboration">App Building.</option>
+            <option value="Support">It Support</option>
+            <option value="Support">Interview</option>
+            <option value="Support">Support</option>
+            <option value="Support">Other purpose</option>
+          </select>
+          {errors.purpose && (
+            <p className="text-red-500 text-sm mt-1">
+              {errors.purpose.message}
+            </p>
+          )}
+          {purpose && (
+            <p className="text-sm text-gray-500 mt-1">
+              Selected Purpose: <span className="font-semibold">{purpose}</span>
+            </p>
+          )}
+        </div>
+
+        {/* Message */}
+        <div>
+          <textarea
+            rows="4"
+            placeholder="Type your message..."
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            {...register("message", { required: "Message cannot be empty" })}
+          ></textarea>
+          {errors.message && (
+            <p className="text-red-500 text-sm mt-1">
+              {errors.message.message}
+            </p>
+          )}
+        </div>
+
+        {/* Button */}
+        <div className="text-center">
+          <button
+            type="submit"
+            className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200 shadow-md"
+          >
+            Send Message
+          </button>
+        </div>
+      </form>
     </div>
   );
 };
