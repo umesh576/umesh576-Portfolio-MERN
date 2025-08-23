@@ -1,7 +1,6 @@
-"use client";
 import React from "react";
 
-const ViewCodeOption = ({ onClose, codeFrontend, codeBackend }) => {
+const ViewDemo = ({ onClose }) => {
   return (
     // Full-screen overlay
     <div
@@ -20,14 +19,17 @@ const ViewCodeOption = ({ onClose, codeFrontend, codeBackend }) => {
         >
           ×
         </button>
+        <div className="text-center text-wrap">
+          <h1>Project is not hosted yet</h1>
+        </div>
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition cursor-pointer">
-            <a href={codeFrontend}>Frontend</a>
-          </button>
-          <button className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition cursor-pointer">
-            <a href={codeBackend}>Backend</a>
+          <button
+            className="px-4 py-2 bg-blue-600 text-white rounded-lg cursor-pointer hover:bg-blue-700 transition"
+            onClick={onClose}
+          >
+            Close
           </button>
         </div>
       </div>
@@ -35,4 +37,4 @@ const ViewCodeOption = ({ onClose, codeFrontend, codeBackend }) => {
   );
 };
 
-export default ViewCodeOption;
+export default ViewDemo;

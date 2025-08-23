@@ -2,8 +2,16 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import ProjectCounter from "./animate-component/ProjectCounter";
+import { useRouter } from "next/navigation";
 
 const HeroPage = () => {
+  const router = useRouter();
+  const handleConatct = () => {
+    router.push("/contact-me");
+  };
+  const browseProject = () => {
+    router.push("/my-project");
+  };
   return (
     <div className="w-full flex justify-center">
       <div className="w-full max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -43,12 +51,18 @@ const HeroPage = () => {
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 p-1 mb-4 sm:mb-6 justify-center lg:justify-start">
               <div>
-                <button className="px-4 py-2 sm:px-5 sm:py-3 bg-black text-white rounded-lg shadow-lg shadow-gray-400 cursor-pointer relative hover:top-1 transition-all duration-200 text-sm sm:text-base w-full sm:w-auto">
+                <button
+                  className="px-4 py-2 sm:px-5 sm:py-3 bg-black text-white rounded-lg shadow-lg shadow-gray-400 cursor-pointer relative hover:top-1 transition-all duration-200 text-sm sm:text-base w-full sm:w-auto"
+                  onClick={handleConatct}
+                >
                   Get in touch
                 </button>
               </div>
               <div>
-                <button className="px-4 py-2 sm:px-5 sm:py-3 bg-gray-300 text-black border-2 border-gray-100 rounded-lg shadow-lg shadow-gray-300 cursor-pointer font-bold relative hover:top-1 transition-all duration-200 text-sm sm:text-base w-full sm:w-auto">
+                <button
+                  className="px-4 py-2 sm:px-5 sm:py-3 bg-gray-300 text-black border-2 border-gray-100 rounded-lg shadow-lg shadow-gray-300 cursor-pointer font-bold relative hover:top-1 transition-all duration-200 text-sm sm:text-base w-full sm:w-auto"
+                  onClick={browseProject}
+                >
                   Browse projects
                 </button>
               </div>

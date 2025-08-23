@@ -13,14 +13,14 @@ const MyProject = () => {
     {
       images: ["/project/1.png", "/project/2.png", "/project/3.png"],
       name: "Job portal System",
-      codefrontend: "https://github.com/umesh576/ManxeyKhojam",
+      codefrontend: "https://github.com/umesh576/joblio-client-side",
       codeBackend: "https://github.com/umesh576/ManxeyKhojam",
     },
     {
-      images: ["/backgroung.jpg", "/bg.png", "/logo.png"],
-      name: "Library Management System",
-      codefrontend: "http://www.google.com",
-      codeBackend: "",
+      images: ["/en1.jpeg", "/en2.jpeg", "/en3.jpeg", "/en4.jpeg"],
+      name: "Engineering Consultancy Website",
+      codefrontend: "https://github.com/umesh576/cosulatncy-client",
+      codeBackend: "https://github.com/umesh576/cosultancy-server",
     },
   ];
 
