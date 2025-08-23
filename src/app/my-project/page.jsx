@@ -6,18 +6,21 @@ const MyProject = () => {
   const projectDetails = [
     {
       images: ["/backgroung.jpg", "/bg.png", "/logo.png"],
-      name: "E-Commerce",
-      code: "http://www.google.com",
+      name: "E-Commerce website",
+      codefrontend: "https://github.com/umesh576/Ecommerce-client-side",
+      codeBackend: "https://github.com/umesh576/Ecommerce-server-side",
     },
     {
       images: ["/project/1.png", "/project/2.png", "/project/3.png"],
       name: "Job portal System",
-      code: "http://www.google.com",
+      codefrontend: "https://github.com/umesh576/ManxeyKhojam",
+      codeBackend: "https://github.com/umesh576/ManxeyKhojam",
     },
     {
       images: ["/backgroung.jpg", "/bg.png", "/logo.png"],
       name: "Library Management System",
-      code: "http://www.google.com",
+      codefrontend: "http://www.google.com",
+      codeBackend: "",
     },
   ];
 
