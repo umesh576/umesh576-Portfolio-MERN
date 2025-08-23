@@ -1,9 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import emailjs from "emailjs-com";
 
 const ContactMe = () => {
   const [purpose, setPurpose] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const {
     register,
     handleSubmit,
@@ -12,9 +14,49 @@ const ContactMe = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log("Form Data:", data);
-    alert("Message Sent Successfully ✅");
-    reset(); // clear form after submission
+    console.log("Env Variables:", {
+      serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+      templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+      userId: process.env.NEXT_PUBLIC_EMAILJS_USER_ID,
+    });
+    setIsSubmitting(true);
+
+    // Send email using EmailJS
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        {
+          name: data.fullName, // Matches {{name}} in template
+          time: new Date().toLocaleString(), // Matches {{time}} in template
+          message: data.message, // Matches {{message}} in template
+          // Additional data you might want to include:
+          email: data.email,
+          subject: data.subject,
+          purpose: data.purpose,
+          to_name: "Umesh Joshi",
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_USER_ID
+      )
+      .then((result) => {
+        console.log("Email sent successfully:", result.text);
+        alert("Message Sent Successfully ✅");
+        reset();
+        setPurpose("");
+      })
+      .catch((error) => {
+        console.error("Failed to send email:", error);
+        console.log("Service ID:", process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID);
+        console.log(
+          "Template ID:",
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+        );
+        console.log("User ID:", process.env.NEXT_PUBLIC_EMAILJS_USER_ID);
+        alert("Failed to send message. Please try again later.");
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
 
   return (
@@ -85,14 +127,15 @@ const ContactMe = () => {
             className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
             {...register("purpose", { required: "Please select a purpose" })}
             onChange={(e) => setPurpose(e.target.value)}
+            value={purpose}
           >
             <option value="">Select Purpose</option>
-            <option value="Business Inquiry">Website Building</option>
-            <option value="Collaboration">App Building.</option>
-            <option value="Support">It Support</option>
-            <option value="Support">Interview</option>
+            <option value="Website Building">Website Building</option>
+            <option value="App Building">App Building</option>
+            <option value="IT Support">IT Support</option>
+            <option value="Interview">Interview</option>
             <option value="Support">Support</option>
-            <option value="Support">Other purpose</option>
+            <option value="Other purpose">Other purpose</option>
           </select>
           {errors.purpose && (
             <p className="text-red-500 text-sm mt-1">
@@ -125,9 +168,10 @@ const ContactMe = () => {
         <div className="text-center">
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200 shadow-md"
+            disabled={isSubmitting}
+            className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200 shadow-md disabled:bg-blue-400 disabled:cursor-not-allowed"
           >
-            Send Message
+            {isSubmitting ? "Sending..." : "Send Message"}
           </button>
         </div>
       </form>
