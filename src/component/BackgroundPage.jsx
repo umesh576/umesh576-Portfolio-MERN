@@ -11,7 +11,7 @@ const BackgroundPage = () => {
               <Image
                 className="object-cover"
                 src={
-                  "https://res.cloudinary.com/dudpopk4h/image/upload/v1755970787/uploads/ownbg-1755970785238.jpg"
+                  "https://res.cloudinary.com/dudpopk4h/image/upload/v1769701852/1737824526496_cbdbgs.jpg"
                 }
                 fill
                 alt="Profile image"
